@@ -3,7 +3,7 @@
     import Social from './social.svelte'
 
     //Grab the active route
-    import { stores } from '@sapper/app'
+    import { stores } from '$app/stores'
     const { page } = stores()
 
     //Match the current route to the available options
