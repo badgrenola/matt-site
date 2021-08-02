@@ -31,7 +31,7 @@
 		<!-- https://tailwindgrids.com/#/ -->
 		<div class="flex flex-wrap -mx-2 overflow-hidden sm:-mx-4">
 
-			{#each $session.projects as project}
+			{#each Object.values($session.projects) as project}
 				<Card
 					desc={project.shortDesc}
 					link={`./projects/${project.slug}`}

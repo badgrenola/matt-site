@@ -24,7 +24,7 @@
     <ul class="mt-2">
       {#each latestProjects as project}
         <li class="mb-1">
-          <a href="./projects/{project.slug}" >{project.name}</a>
+          <a href="projects/{project.slug}" >{project.name}</a>
         </li>
       {/each}
     </ul>
@@ -34,7 +34,7 @@
     <ul class="mt-2">
       {#each latestArticles as article}
         <li class="mb-1">
-          <a href="./articles/{article.slug}">{article.title}</a>
+          <a href="articles/{article.slug}">{article.title}</a>
         </li>
       {/each}
     </ul>
