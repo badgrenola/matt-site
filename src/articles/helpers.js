@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
-import { toHTML } from '../../helpers/marked'
-import { getReadingTime } from '../../helpers/readingTime';
+import { toHTML } from '../helpers/marked'
+import { getReadingTime } from '../helpers/readingTime';
 
 // https://stackoverflow.com/a/15397495
 function getDateStringFromDate(date) {
@@ -28,6 +28,17 @@ export function getArticles () {
 	return slugs.map((slug) => { return getArticle(slug)}).sort((a, b) => {
 		return a.metadata.pubdate < b.metadata.pubdate ? 1 : -1;
 	});
+}
+
+export function getArticleCards() {
+  return getArticles().map(article => ({
+    title: article.metadata.title,
+    slug: article.slug,
+    smallImage: article.metadata.smallImage,
+    desc: article.metadata.desc,
+    date: article.metadata.date,
+    timeToRead: article.metadata.timeToRead
+  }));
 }
 
 export function getArticle(slug, addPrevAndNext) {

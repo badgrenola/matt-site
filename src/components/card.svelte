@@ -5,12 +5,14 @@
     export let smallImage
     export let title
     export let timeToRead
+
+    $: console.log(smallImage)
 </script>
 
 <div class="my-2 mb-4 px-2 w-full overflow-hidden sm:my-4 sm:px-4 sm:w-full md:w-1/2 xl:w-1/3">
     <div class="group flex flex-col relative h-full cursor-pointer">
         <a rel="prefetch" href={link} class="absolute w-full h-full z-10"> </a>
-        <div class="relative pb-2/3 rounded-md overflow-hidden group-hover:opacity-90 transition-opacity duration-100 ease-in-out">
+        <div class="relative pb-[66.66%] rounded-md overflow-hidden group-hover:opacity-90 transition-opacity duration-100 ease-in-out">
             <img class="absolute h-full w-full object-cover bg-gray-300" src={smallImage} alt={title} />
         </div>
         {#if date || timeToRead}

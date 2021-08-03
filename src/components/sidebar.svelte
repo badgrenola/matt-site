@@ -1,23 +1,20 @@
 <script>
+  import { session } from '$app/stores'
   import Social from './social.svelte'
-
-  //Projects are populated by the layout
-  export let projects = []
-
-  //Post basic details are loaded by the layout on startup and passed here
-  export let articles = []
 
   //Get the 5 latest projects
   let maxProjects = 5
-  let latestProjects = projects.sort((a, b) => {
+  let latestProjects = Object.values($session.projects).sort((a, b) => {
     if (a.id > b.id) return 1
     return -1
-  }).slice(Math.max(projects.length - maxProjects, 0)).reverse()
+  }).slice(Math.max($session.projects.length - maxProjects, 0)).reverse()
 
   //Get the 5 latest articles - articles are automatically sorted by date
   let maxArticles = 5
-  let latestArticles = []
-  $: latestArticles = articles.slice(Math.max(projects.length - maxProjects, 0))
+  let latestArticles = Object.values($session.articleCards).sort((a, b) => {
+    if (a.id > b.id) return 1
+    return -1
+  }).slice(Math.max($session.articleCards.length - maxArticles, 0)).reverse()
 
 </script>
 
@@ -27,7 +24,7 @@
     <ul class="mt-2">
       {#each latestProjects as project}
         <li class="mb-1">
-          <a href="./projects/{project.slug}" >{project.name}</a>
+          <a href="/projects/{project.slug}" >{project.name}</a>
         </li>
       {/each}
     </ul>
@@ -37,7 +34,7 @@
     <ul class="mt-2">
       {#each latestArticles as article}
         <li class="mb-1">
-          <a href="./articles/{article.slug}">{article.title}</a>
+          <a href="/articles/{article.slug}">{article.title}</a>
         </li>
       {/each}
     </ul>
