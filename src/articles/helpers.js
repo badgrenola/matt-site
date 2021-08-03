@@ -21,7 +21,7 @@ function getDateStringFromDate(date) {
 }
 
 export function getArticles () {
-	const slugs = fs.readdirSync(`${process.cwd()}/src/articles`)
+	const slugs = fs.readdirSync(`static/articles`)
 		.filter(file => path.extname(file) === '.md')
 		.filter(file => file[0] !== '_')
 		.map(file => file.slice(0, -3));
@@ -42,7 +42,7 @@ export function getArticleCards() {
 }
 
 export function getArticle(slug, addPrevAndNext) {
-	const file = `${process.cwd()}/src/articles/${slug}.md`;
+	const file = `static/articles/${slug}.md`;
 	if (!fs.existsSync(file)) return null;
 
 	const markdown = fs.readFileSync(file, 'utf-8');
