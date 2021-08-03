@@ -1,0 +1,10 @@
+{
+  "functions": {
+    "src/articles/helpers.js": {
+      "includeFiles": "src/articles/**"
+    },
+    "src/projects/_projects.js": {
+      "includeFiles": "src/projects/**"
+    }
+  }
+}
