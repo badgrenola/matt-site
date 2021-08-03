@@ -3,8 +3,8 @@
     import Social from './social.svelte'
 
     //Grab the active route
-    import { stores } from '$app/stores'
-    const { page } = stores()
+    import { getStores } from '$app/stores'
+    const { page } = getStores()
 
     //Match the current route to the available options
     // TODO : svelte should declare these vars for us in the $: statement, but I'm getting undeclared errors
