@@ -19,8 +19,8 @@ const Geode = {
     id: 3, 
     slug:"geode",
     name:"Geode (prototype)", 
-    smallImage: "images/geode/splash_small.jpg",
-    largeImage : "images/geode/splash_half.jpg",
+    smallImage: "/images/geode/splash_small.jpg",
+    largeImage : "/images/geode/splash_half.jpg",
     shortDesc:"A WIP web-app that allows you to preview GeoTiff metadata extremely quickly, directly in your browser.",
     keywords:"tiff, geotiff, dtm, gis, mapping, terrain, digital terrain model, planetary data, data",
     links:[

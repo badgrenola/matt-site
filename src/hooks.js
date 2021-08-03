@@ -3,7 +3,7 @@ import { getArticleCards } from './articles/helpers'
 
 export function getSession() {
 	return {
-    articles: getArticleCards(),
-    projects
+    articleCards: getArticleCards(),
+    projects,
   }
 }

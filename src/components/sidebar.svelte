@@ -11,10 +11,10 @@
 
   //Get the 5 latest articles - articles are automatically sorted by date
   let maxArticles = 5
-  let latestArticles = Object.values($session.articles).sort((a, b) => {
+  let latestArticles = Object.values($session.articleCards).sort((a, b) => {
     if (a.id > b.id) return 1
     return -1
-  }).slice(Math.max($session.articles.length - maxArticles, 0)).reverse()
+  }).slice(Math.max($session.articleCards.length - maxArticles, 0)).reverse()
 
 </script>
 
@@ -24,7 +24,7 @@
     <ul class="mt-2">
       {#each latestProjects as project}
         <li class="mb-1">
-          <a href="projects/{project.slug}" >{project.name}</a>
+          <a href="/projects/{project.slug}" >{project.name}</a>
         </li>
       {/each}
     </ul>
@@ -34,7 +34,7 @@
     <ul class="mt-2">
       {#each latestArticles as article}
         <li class="mb-1">
-          <a href="articles/{article.slug}">{article.title}</a>
+          <a href="/articles/{article.slug}">{article.title}</a>
         </li>
       {/each}
     </ul>

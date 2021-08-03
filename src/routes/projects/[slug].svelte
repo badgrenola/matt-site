@@ -1,4 +1,13 @@
 <script context="module">
+    export async function load({ page }) {
+      const slug = page.params.slug;
+      return {
+        props: { slug }
+      };
+    }
+  </script>
+
+<!-- <script context="module">
 	export async function preload({ params, query }, session) {
         // the `slug` parameter is available because
         // this file is called [slug].html
@@ -27,30 +36,42 @@
         }
     };
 
-</script>
+</script> -->
 
 
 <script>
+    import { session } from '$app/stores'
     import PageLayout from '../../components/pageLayout.svelte'
 
-    // Get the project with the matching slug
-    export let project = null
-    export let prevProject = null;
-    export let nextProject = null;
+    export let slug
 
-    //Update the header string
-    let headerString = "Matt Brealey"
-    $: headerString = project ? `${project.name} // Matt Brealey` : "Matt Brealey"
+    //Get the project from the session
+    let project = null
+    let prevProject = null
+    let nextProject = null
 
-    // TODO : Add related posts based upon article tags
-    let relatedPosts = []
+    //Define a function to find a project with given ID
+    const getProjectWithID = (id) => {
+        const projectKey = Object.keys($session.projects).find(projectKey => $session.projects[projectKey].id == id)
+        if (projectKey) { return $session.projects[projectKey] }
+        return null
+    }
 
-    console.log(project)
-    $: {console.log(project)}
+
+    $: {
+        //If the project exists
+        if ($session.projects[slug]) {
+            // Return the project along with the prev/next projects for display at the bottom of the page
+            project = $session.projects[slug]
+            prevProject = getProjectWithID(project.id - 1),
+            nextProject = getProjectWithID(project.id + 1)
+        }
+    }
+
 </script>
 
 <svelte:head>
-    <title>{headerString}</title>
+    <title>{`${project.name} // Matt Brealey`}</title>
     <meta name="description" content="{project.shortDesc}" />
 	<meta name="keywords" content="{project.keywords}"/>
 
@@ -100,7 +121,7 @@
                 {#each project.features as feature}
                     <div class="my-2 mb-4 px-2 w-full overflow-hidden sm:my-4 sm:px-4 sm:w-full md:w-1/2 xl:w-1/3">
                         <div class="flex flex-col relative h-full">
-                            <div class="relative pb-2/3 rounded-md overflow-hidden">
+                            <div class="relative pb-[66.66%] rounded-md overflow-hidden">
                                 {#if feature.image}
                                     <img class="absolute h-full w-full object-cover" src={feature.image} alt={feature.desc} />
                                 {:else if feature.video}
@@ -127,22 +148,22 @@
             </ul>
         {/if}
         
-        {#if relatedPosts.length}
+        <!-- {#if relatedPosts.length}
             <h2 id="related-posts" class="mt-6 text-xl text-pink-600 font-light">Related Posts</h2>
-        {/if}
+        {/if} -->
 
         <hr class="mt-12 w-full"/>
         <div class="flex justify-between pt-2">
             <div class="flex-1 pr-6">
                 {#if prevProject}
                     <h3 class="text-sm text-gray-600">Previous Project</h3>
-                    <a href="./projects/{prevProject.slug}" class="colorLink">{prevProject.name}</a>
+                    <a href="/projects/{prevProject.slug}" class="colorLink">{prevProject.name}</a>
                 {/if}
             </div>
             <div class="flex-1 text-right pl-6">
                 {#if nextProject}
                     <h3 class="text-sm text-gray-600">Next Project</h3>
-                    <a href="./projects/{nextProject.slug}" class="colorLink">{nextProject.name}</a>
+                    <a href="/projects/{nextProject.slug}" class="colorLink">{nextProject.name}</a>
                 {/if}
             </div>
         </div>

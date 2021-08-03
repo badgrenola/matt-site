@@ -3,7 +3,7 @@ import { toHTML } from '../helpers/marked'
 //Areo Browser Description Markdown 
 const abDescMD = `
 Areo Browser is a [React](https://reactjs.org/)/[ThreeJS](https://threejs.org/) web-app that allows you to explore nearly 2000 Martian terrain models, in full 3D, directly in your browser and on mobile. 
-It currently uses data from both the [HiRISE](https://www.uahirise.org/) camera (on-board NASA's [Mars Reconnaissance Orbiter](https://mars.nasa.gov/mro/)), and the [HRSC](https://www.esa.int/ESA_Multimedia/Images/2004/01/The_High_Resolution_Stereo_Camera_HRSC) (on-board ESA's [Mars Express](http://www.esa.int/Science_Exploration/Space_Science/Mars_Express)).
+It currently uses data from both the [HiRISE](https://www.uahirise.org/) camera (on-board NASA's [Mars Reconnaissance Orbiter](https://mars.nasa.gov/mro/)), and the [HRSC](https://www.esa.int/ESA_Multimedia//Images/2004/01/The_High_Resolution_Stereo_Camera_HRSC) (on-board ESA's [Mars Express](http://www.esa.int/Science_Exploration/Space_Science/Mars_Express)).
 
 With options for mesh and image resolution, vertical exaggeration, and displaying a custom [Cividis](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0199239) gradient with contour mapping on the model,
 Areo Browser vastly increases the accessibility of the included data.
@@ -24,8 +24,8 @@ const AreoBrowser = {
     id: 2,
     slug:"areo-browser",
     name:"Areo Browser", 
-    smallImage: "images/areo-browser/splash_small.jpeg",
-    largeImage : "images/areo-browser/splash_half.jpeg",
+    smallImage: "/images/areo-browser/splash_small.jpeg",
+    largeImage : "/images/areo-browser/splash_half.jpeg",
     shortDesc:"A web-app allowing you to explore nearly 2000 3D models of Mars, using data from HiRISE & HRSC.",
     keywords:"areo, areo-browser, areo browser, areobrowser, space, hirise, hrsc, browser, react, reactjs, mobile, desktop, dtm, gis, terrain, digital terrain model, mars, planet, planetary data, data",
     links:[
@@ -39,32 +39,32 @@ const AreoBrowser = {
         {
             title:"Browse & Search Nearly 2000 Models", 
             desc:"Filtering and sorting options make it SUPER easy to find the DTM you're looking for.", 
-            image:"images/areo-browser/fileCount.jpg"
+            image:"/images/areo-browser/fileCount.jpg"
         },
         {
             title:"Multi-resolution Meshes & Imagery", 
             desc:"Easily switch between 4 quality levels for meshes & their associated images, only downloading data when needed.", 
-            image:"images/areo-browser/resolution.jpg"
+            image:"/images/areo-browser/resolution.jpg"
         },
         {
             title:"Works on both Desktop & Mobile", 
             desc:"With a UI designed for phones, tablets and desktops, you can view slices of Mars on any of your devices.", 
-            image:"images/areo-browser/mobile.jpg"
+            image:"/images/areo-browser/mobile.jpg"
         },
         {
             title:"Normal Maps to Provide Extra Detail", 
             desc:"These generated images massively increase the perceived details on the loaded mesh, without requiring a more powerful machine.", 
-            image:"images/areo-browser/normal.jpg"
+            image:"/images/areo-browser/normal.jpg"
         },
         {
             title:"Vertical Exaggeration Options", 
             desc:"Increase the vertical scale of the loaded mesh up to 5x, to make even the flattest terrain easier to understand.", 
-            image:"images/areo-browser/ve.gif"
+            image:"/images/areo-browser/ve.gif"
         },
         {
             title:"Altimetry Mode", 
             desc:"Apply an easy-to-read elevation gradiant to the model, with overlaid contour lines at custom intervals ranging from 5m to 5km.", 
-            image:"images/areo-browser/alt.gif" //https://gifmaker.me/
+            image:"/images/areo-browser/alt.gif" //https://gifmaker.me/
         },
     ],
     todos:[

@@ -2,7 +2,6 @@
 	import { session } from '$app/stores'
 	import PageLayout from '../../components/pageLayout.svelte'
 	import Card from '../../components/card.svelte'
-	
 </script>
 
 <svelte:head>
@@ -28,13 +27,13 @@
 <PageLayout>
 	<h1 slot="title">Articles</h1>
 	<div slot="content">
-		{#if $session.articles}
+		{#if $session.articleCards}
 			<div class="flex flex-wrap -mx-2 overflow-hidden sm:-mx-4">
-				{#each $session.articles as article}
+				{#each $session.articleCards as article}
 					<Card
 						date={article.date}
 						desc={article.desc}
-						link={`./articles/${article.slug}`}
+						link={`/articles/${article.slug}`}
 						smallImage={article.smallImage}
 						title={article.title}
 						timeToRead={article.timeToRead}

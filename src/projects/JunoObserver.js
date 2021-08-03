@@ -17,8 +17,8 @@ const JunoObserver = {
     id: 1, 
     slug:"juno-observer",
     name:"Juno Observer", 
-    smallImage: "images/juno-observer/splash_small.jpeg",
-    largeImage : "images/juno-observer/splash_half.jpeg",
+    smallImage: "/images/juno-observer/splash_small.jpeg",
+    largeImage : "/images/juno-observer/splash_half.jpeg",
     shortDesc:"A web-app allowing you to explore Junocam imagery from NASA's Juno spacecraft, projected onto a 3D Jupiter.",
     keywords:"juno, space, nasa, jupiter, browser, react, reactjs, mobile, desktop, planet, planetary data, data, spacecraft, orbit, perijove, mission juno",
     links:[
@@ -32,17 +32,17 @@ const JunoObserver = {
         {
             title:"15 Perijoves of Data", 
             desc:"The live version of Juno Observer allows you to browse all of the images from the first 15 perijoves of Junocam data.", 
-            image:"images/juno-observer/perijoves.jpg"
+            image:"/images/juno-observer/perijoves.jpg"
         },
         {
             title:"Full Resolution", 
             desc:"Images are projected at full resolution, meaning you can zoom ALL the way in to Jupiter's ludicrous storm features.", 
-            image:"images/juno-observer/detail.jpg"
+            image:"/images/juno-observer/detail.jpg"
         },
         {
             title:"Fixed Rotation Mode", 
             desc:"Toggle on <i>Fixed Rotation</i> to lock Jupiter's rotation in place, making it easier to view subtle differences between exposures.", 
-            image:"images/juno-observer/fixedRot.jpg"
+            image:"/images/juno-observer/fixedRot.jpg"
         }
     ],
     todos:[

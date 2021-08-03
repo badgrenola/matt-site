@@ -38,7 +38,7 @@
     <div class="flex items-center justify-between px-4 py-4 sm:p-0">
         <div class="">
             <a href="/" alt="Home">
-                <img class="h-12 rounded-full" src="profile.jpg" alt="A picture of Matt Brealey's head" />
+                <img class="h-12 rounded-full" src="/profile.jpg" alt="A picture of Matt Brealey's head" />
             </a>
         </div>
         <div class="sm:hidden">
