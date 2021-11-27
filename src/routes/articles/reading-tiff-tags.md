@@ -1,9 +1,12 @@
 ---
+id: 0
+slug: reading-tiff-tags
 title: Reading Tiff Tags 🏷
-pubdate: 2020-04-15
+date: "15th April 2020"
 smallImage: /images/articles/reading-tiff-tags/tags.png
 desc: For my new tool, Geode, I needed to learn ALL about tiff tags. Turns out, there's a LOT of them...
 keywords: geode, tiff, code, geotiff, mapping, data, gis
+timeToRead: 6
 ---
 
 I'm currently in the process of adding several other formats to [Areo](/projects/areo), my _'take binary elevation data and make into exportable 3D mesh'_ tool, one of which is [Geotiff](https://earthdata.nasa.gov/esdis/eso/standards-and-references/geotiff). Instead of just figuring out how to read the format (boo, boring, boo), I thought I'd try and make an in-browser tool to read local tiff files, show 2D previews with custom colour mapping, and generate downloadable 3D mesh previews if applicable (hooray, 3D things, yay!) I also thought I'd briefly write it all up as I went. 👋
@@ -19,7 +22,9 @@ I'm currently in the process of adding several other formats to [Areo](/projects
 ### Byte Order & A Very Magic Number
 At the start of _every_ .tiff file there are 8 bytes of data. Something like :
 
-    4D4D002A 00000008
+```
+4D4D002A 00000008
+```
 
 The first 2 bytes are either going to be both _4D_ (i.e. _77_ as a UInt8), or _49_ (i.e. _73_ as a UInt8). If it's _4D (77)_ the [byte order](https://www.geeksforgeeks.org/little-and-big-endian-mystery/) of the file is BigEndian, if it's _49 (73)_ byte order is LittleEndian. The example above is therefore BigEndian.
 
@@ -35,7 +40,9 @@ Each one of these subfiles is described by an Image File Directory (IFD) - a sec
 
 If we follow the 8 byte offset we found above, we find ourselves at the start of our first IFD, which begins with these two bytes :
 
-    0010
+```
+0010
+```
 
 This is our IFD field count, which after converting to UInt8 tells us that there are 16 fields we now need to find and parse.
 
@@ -43,7 +50,9 @@ This is our IFD field count, which after converting to UInt8 tells us that there
 
 IFD fields are always 12 bytes long, so let's grab the next 12 bytes and start parsing :
 
-    01000003 00000001 0C890000
+```
+01000003 00000001 0C890000
+```
 
 The first 2 bytes give us the ID of the tiff tag. Converting `0100` to a short (AKA a 16-bit unsigned int) gives us a value of 256. One search of [AwareSystems Tiff Tag Reference](https://www.awaresystems.be/imaging/tiff/tifftags/search.html?q=256&Submit=Find+Tags) later and :
 
@@ -59,11 +68,15 @@ The behaviour of the remaining 4 bytes differs slightly from field to field, dep
 
 To determine whether the final bytes represent an offset, we can perform a simple calculation : 
 
-    (# of values) * (# of bytes per value) > (# of bytes remaining)
+```
+(# of values) * (# of bytes per value) > (# of bytes remaining)
+```
 
 We know that we only have 4 bytes left from our original 12 bytes of field data, we've already calculated our value count, and we know that the data type is _short_ (i.e. 2 bytes per value). So in the case of our _ImageWidth_ field, this calculation becomes :
 
-    isOffset = (1 * 2) > 4
+```
+isOffset = (1 * 2) > 4
+```
 
 This evaluates to false in our _ImageWidth_ case, meaning that the final 4 bytes represent the actual value of the field. These bytes are `0C890000`, which we can now convert to a value of _3209_. We've found the width of our tiff file!
 

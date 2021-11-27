@@ -1,42 +1,40 @@
-<script>
-	import { session } from '$app/stores'
-	import PageLayout from '../../components/pageLayout.svelte'
-	import Card from '../../components/card.svelte'
+<script context="module">
+  /**
+   * @type {import('@sveltejs/kit').Load}
+   */
+  export async function load({ fetch }) {
+    const res = await fetch(`/articles.json`);
+    const articles = await res.json();
+    
+    return {
+      props: {
+        articles,
+      },
+    };
+  }
 </script>
 
-<svelte:head>
-	<title>Articles // Matt Brealey</title>
-	<meta name="description" content="Hopefully soon to be many articles, written by a freelance creative problem solver." />
-	<meta name="keywords" content="space, react, reactjs, threejs, sapper, svelte, sveltejs, ios, swift, 3d, ar, vfx, design"/>
+<script>
+	import PageLayout from '$lib/PageLayout.svelte'
+	import Card from '$lib/Card.svelte'
+	export let articles = null
+</script>
 
-	<!-- Open Graph / Facebook -->
-	<meta property="og:type" content="website">
-	<meta property="og:url" content="https://mattbrealey.com/articles">
-	<meta property="og:title" content="Matt Brealey">
-	<meta property="og:description" content="Hopefully soon to be many articles, written by a freelance creative problem solver.">
-	<meta property="og:image" content="https://mattbrealey.com/profile.jpg">
-
-	<!-- Twitter -->
-	<meta property="twitter:card" content="summary_large_image">
-	<meta property="twitter:url" content="https://mattbrealey.com/articles">
-	<meta property="twitter:title" content="Matt Brealey">
-	<meta property="twitter:description" content="Hopefully soon to be many articles, written by a freelance creative problem solver.">
-	<meta property="twitter:image" content="https://mattbrealey.com/profile.jpg">
-</svelte:head>
+<!-- TODO: Head -->
 
 <PageLayout>
 	<h1 slot="title">Articles</h1>
-	<div slot="content">
-		{#if $session.articleCards}
+	<div slot="content" class="">
+		{#if articles}
 			<div class="flex flex-wrap -mx-2 overflow-hidden sm:-mx-4">
-				{#each $session.articleCards as article}
+				{#each articles as article}
 					<Card
-						date={article.date}
-						desc={article.desc}
-						link={`/articles/${article.slug}`}
-						smallImage={article.smallImage}
-						title={article.title}
-						timeToRead={article.timeToRead}
+						date={article.metadata.date}
+						desc={article.metadata.desc}
+						link={`/articles/${article.metadata.slug}`}
+						smallImage={article.metadata.smallImage}
+						title={article.metadata.title}
+						timeToRead={article.metadata.timeToRead}
 					/>
 				{/each}
 			</div>

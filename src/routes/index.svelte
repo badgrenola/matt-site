@@ -1,30 +1,71 @@
-<svelte:head>
-  <title>Matt Brealey</title>
-  <meta name="description" content="The portfolio site of a freelance creative problem solver." />
-  <meta name="keywords" content="space, react, reactjs, threejs, sapper, svelte, sveltejs, ios, swift, 3d, ar, vfx, design"/>
+<!-- <script context="module">
+  /**
+   * @type {import('@sveltejs/kit').Load}
+   */
+  export async function load({ fetch }) {
+    const res = await fetch(`/posts.json`);
+    const posts = await res.json();
+    
+    return {
+      props: {
+        posts,
+      },
+    };
+  }
+</script>
 
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://mattbrealey.com">
-  <meta property="og:title" content="Matt Brealey">
-  <meta property="og:description" content="The portfolio site of a freelance creative problem solver.">
-  <meta property="og:image" content="https://mattbrealey.com/profile.jpg">
+<script>
+  import { seo } from "$lib/store";
+  //https://www.npmjs.com/package/svelte-paginate
 
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://mattbrealey.com">
-  <meta property="twitter:title" content="Matt Brealey">
-  <meta property="twitter:description" content="The portfolio site of a freelance creative problem solver.">
-  <meta property="twitter:image" content="https://mattbrealey.com/profile.jpg">
-</svelte:head>
+  export let posts;
+
+  let items = posts;
+  console.log(items)
+
+  $seo = {
+    title: "Hagura - Light",
+    description: "Hagura is a light-weight theme/template built for sveltekit.",
+  };
+</script>
+
+<main>
+  <article>
+    <h1 class="text-7xl leading-relaxed font-black font-display mb-4">
+      Hello!
+    </h1>
+    <div>
+      {#each items as { metadata: { title, description, tags, outline, slug }, path }}
+        <div class="mb-4">
+          <a sveltekit:prefetch href={path.replace(/\.[^/.]+$/, "")}
+            ><h2 class="text-3xl leading-relaxed">{title}</h2></a
+          >
+          <p>{description}</p>
+        </div>
+      {/each}
+    </div>
+  </article>
+</main>
+ -->
+
+
+
+<!-- TODO: Head -->
 
 <svelte:window on:resize={() => {
   updateHandRotation()
   updateWaveTransformOrigin()
 }}/>
+
 <script>
   import { onMount } from 'svelte'
-  import PageLayout from '../components/pageLayout.svelte'
+  import { seo } from "$lib/store";
+  import PageLayout from '$lib/PageLayout.svelte'
+
+  $seo = {
+    title: "Matt Brealey",
+    description: "some description",
+  };
 
   //Setup the data types for the rotating text + store the current index
   let dataTypes = ["VFX", "design", "space"]
@@ -163,7 +204,7 @@
 
   <span slot = "content">
     <p class="pb-4 sm:hidden">I'm Matt.</p>
-    <p class="">
+    <p>
       <span class="hidden sm:inline-block">I'm Matt.</span> And I can help you do
       <span class="font-semibold">awesome</span>
       things with your

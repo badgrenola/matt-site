@@ -1,45 +1,40 @@
-<script>
-	import { session } from '$app/stores'
-	import PageLayout from '../../components/pageLayout.svelte'
-	import Card from '../../components/card.svelte'
+<script context="module">
+  /**
+   * @type {import('@sveltejs/kit').Load}
+   */
+  export async function load({ fetch }) {
+    const res = await fetch(`/projects.json`);
+    const projects = await res.json();
+    
+    return {
+      props: {
+        projects,
+      },
+    };
+  }
 </script>
 
-<svelte:head>
-	<title>Projects // Matt Brealey</title>
-	<meta name="description" content="Mainly space-based projects, created by a freelance creative problem solver." />
-	<meta name="keywords" content="space, react, reactjs, threejs, sapper, svelte, sveltejs, ios, swift, 3d, ar, vfx, design"/>
-
-	<!-- Open Graph / Facebook -->
-	<meta property="og:type" content="website">
-	<meta property="og:url" content="https://mattbrealey.com/projects">
-	<meta property="og:title" content="Matt Brealey">
-	<meta property="og:description" content="Mainly space-based projects, created by a freelance creative problem solver.">
-	<meta property="og:image" content="https://mattbrealey.com/profile.jpg">
-
-	<!-- Twitter -->
-	<meta property="twitter:card" content="summary_large_image">
-	<meta property="twitter:url" content="https://mattbrealey.com/projects">
-	<meta property="twitter:title" content="Matt Brealey">
-	<meta property="twitter:description" content="Mainly space-based projects, created by a freelance creative problem solver.">
-	<meta property="twitter:image" content="https://mattbrealey.com/profile.jpg">
-</svelte:head>
+<script>
+	import PageLayout from '$lib/PageLayout.svelte'
+	import Card from '$lib/Card.svelte'
+	export let projects = null
+  console.log(projects)
+</script>
 
 <PageLayout>
-	<span slot="title">Projects</span>
-
-	<div slot="content">
-		<!-- https://tailwindgrids.com/#/ -->
-		<div class="flex flex-wrap -mx-2 overflow-hidden sm:-mx-4">
-
-			{#each Object.values($session.projects) as project}
-				<Card
-					desc={project.shortDesc}
-					link={`./projects/${project.slug}`}
-					smallImage={project.smallImage}
-					title={project.name}
-				/>
-			{/each}
-
-		</div>
+	<h1 slot="title">Projects</h1>
+	<div slot="content" class="">
+		{#if projects}
+			<div class="flex flex-wrap -mx-2 overflow-hidden sm:-mx-4">
+				{#each projects as project}
+					<Card
+						desc={project.metadata.desc}
+						link={`/projects/${project.metadata.slug}`}
+						smallImage={project.metadata.smallImage}
+						title={project.metadata.title}
+					/>
+				{/each}
+			</div>
+		{/if}
 	</div>
 </PageLayout>
