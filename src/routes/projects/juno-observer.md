@@ -59,7 +59,7 @@ in a way that wasn't previously possible.
 
 The live version of the app uses imagery from the original version of my processing pipeline, which has since vastly improved. I'm also currently about
 75% of the way through a complete re-write of the app, which already contains a lot more features, thanks to the fact that is now uses
-the same base structure as [AreoBrowser](./projects/areo-browser).
+the same base structure as [AreoBrowser](./areo-browser).
 
 <ProjectFeatures {features} />
 <ProjectTodos {todos} />

@@ -59,7 +59,7 @@ It was originally created as part of a month-long project I set myself, to see i
 create a tool that not only opens the files quickly, but also converts them into a useful, more-accessible 3D format.
 
 I have been working on a newer version of this app which expands the amount of file formats, and implements a command-line version
-of the featureset. This new version currently forms part of my [Areo Browser](./projects/areo-browser) data pipeline, and I plan on
+of the featureset. This new version currently forms part of my [Areo Browser](./areo-browser) data pipeline, and I plan on
 documenting and releasing it here in the near future.
 
 <ProjectFeatures {features} />

@@ -86,7 +86,7 @@ Each available model consists of two parts - the mesh, and the associated image 
 
 The mesh is generated on-the-fly in the browser, using [Web Workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers) to convert a custom-encoded RGB image into the required height data.
 This custom image format is an order-of-magnitude smaller than the original source file, but maintains a high-level of accuracy, and allows different resolutions to be quickly generated as needed.
-It is created using an upcoming new version of my Mac-based conversion tool, [Areo](./projects/areo).
+It is created using an upcoming new version of my Mac-based conversion tool, [Areo](./areo).
 
 Two images are then applied to the model. The first is a colour image, created by combining all available RGB image data from the source files, and displayed at the desired resolution.
 The second is a _normal_ map, which is a way of adding extra perceived detail to the model, without needing to increase the poly-count, again helping to ensure that the files can be viewed on older devices.
