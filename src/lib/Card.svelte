@@ -1,10 +1,10 @@
 <script>
-  export let date
-  export let desc
-  export let link
-  export let smallImage
-  export let title
-  export let timeToRead
+    export let desc
+    export let link
+    export let smallImage
+    export let title
+    export let date = null
+    export let timeToRead = null
 </script>
 
 <div class="my-2 mb-4 px-2 w-full overflow-hidden sm:my-4 sm:px-4 sm:w-full md:w-1/2 xl:w-1/3">

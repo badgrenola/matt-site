@@ -20,7 +20,7 @@ const SEO_Defaults = {
   }
   }
 
-const createSEOStore = () => {
+const createstore = () => {
   const {set, update, subscribe} = writable(Object.assign({}, SEO_Defaults))
 
   const setToIndex = () => {
@@ -58,5 +58,5 @@ const createSEOStore = () => {
 }
 
 //Default to the main site meta
-const SEOStore = createSEOStore()
-export { SEOStore }
+const store = createstore()
+export { store }

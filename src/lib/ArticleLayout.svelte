@@ -1,5 +1,5 @@
 <script>
-    import { SEOStore } from './SEOStore'
+    import { store } from './store'
     export let id
     export let date
     export let timeToRead
@@ -11,7 +11,7 @@
     export let tags
     export let title
 
-    SEOStore.setToArticle({id, desc, keywords, largeImage, slug, smallImage, tags, title})
+    store.setToArticle({id, desc, keywords, largeImage, slug, smallImage, tags, title})
 
 </script>
 

@@ -15,11 +15,11 @@
 </script>
 
 <script>
-	import { SEOStore } from "$lib/SEOStore";
+	import { store } from "$lib/store";
 	import PageLayout from '$lib/PageLayout.svelte'
 	import Card from '$lib/Card.svelte'
 	export let projects = null
-	SEOStore.setToIndex()
+	store.setToIndex()
 </script>
 
 <PageLayout>
