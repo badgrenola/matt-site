@@ -12,13 +12,13 @@ const SEO_Defaults = {
     image: "https://mattbrealey.com/profile.jpg",
   },
   twitter: {
-   card: "summary_large_image",
-   url: "https://mattbrealey.com",
-   title: "Matt Brealey",
-   description: "The portfolio site of a freelance creative problem solver.",
-   image: "https://mattbrealey.com/profile.jpg",
+    card: "summary_large_image",
+    url: "https://mattbrealey.com",
+    title: "Matt Brealey",
+    description: "The portfolio site of a freelance creative problem solver.",
+    image: "https://mattbrealey.com/profile.jpg",
   }
-}
+  }
 
 const createSEOStore = () => {
   const {set, update, subscribe} = writable(Object.assign({}, SEO_Defaults))
@@ -39,12 +39,12 @@ const createSEOStore = () => {
       state.openGraph.url = `https://mattbrealey.com/${isArticle ? "articles" : "projects"}/${slug}`
       state.openGraph.title = title
       state.openGraph.description = desc
-      state.openGraph.smallImage = smallImage
+      state.openGraph.image = smallImage
 
       state.twitter.url = `https://mattbrealey.com/${isArticle ? "articles" : "projects"}/${slug}`
       state.twitter.title = title
       state.twitter.description = desc
-      state.twitter.smallImage = smallImage
+      state.twitter.image = smallImage
       return state
     })
   }
