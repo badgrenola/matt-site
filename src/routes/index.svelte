@@ -7,7 +7,7 @@
 
 <script>
   import { onMount } from 'svelte'
-  import { store } from "$lib/store";
+  import store from "$lib/store";
   import PageLayout from '$lib/PageLayout.svelte'
 
   //Set the index metadata

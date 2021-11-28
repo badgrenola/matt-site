@@ -59,4 +59,4 @@ const createstore = () => {
 
 //Default to the main site meta
 const store = createstore()
-export { store }
+export default store
