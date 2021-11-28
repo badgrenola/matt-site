@@ -1,7 +1,15 @@
 <script>
-  export let title
+  import { SEOStore } from './SEOStore'
+  export let id
+  export let desc
+  export let keywords
   export let largeImage
-  export let links
+  export let slug
+  export let smallImage
+  export let tags
+  export let title
+  
+  SEOStore.setToProject({id, desc, keywords, largeImage, slug, smallImage, tags, title})
 </script>
 
 <div class="w-full">

@@ -7,13 +7,11 @@
 
 <script>
   import { onMount } from 'svelte'
-  import { seo } from "$lib/store";
+  import { SEOStore } from "$lib/SEOStore";
   import PageLayout from '$lib/PageLayout.svelte'
 
-  $seo = {
-    title: "Matt Brealey",
-    description: "some description",
-  };
+  //Set the index metadata
+  SEOStore.setToIndex()
 
   //Setup the data types for the rotating text + store the current index
   let dataTypes = ["VFX", "design", "space"]
