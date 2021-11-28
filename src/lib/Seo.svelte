@@ -1,8 +1,5 @@
 <script>
   import { SEOStore } from "./SEOStore";
-  $: {
-    console.log($SEOStore)
-  }
 </script>
 
 <svelte:head>

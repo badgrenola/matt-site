@@ -59,4 +59,4 @@ const createSEOStore = () => {
 
 //Default to the main site meta
 const SEOStore = createSEOStore()
-export { SEOStore, SEO_Defaults }
+export { SEOStore }

@@ -15,9 +15,11 @@
 </script>
 
 <script>
+	import { SEOStore } from "$lib/SEOStore";
 	import PageLayout from '$lib/PageLayout.svelte'
 	import Card from '$lib/Card.svelte'
 	export let articles = null
+	SEOStore.setToIndex()
 </script>
 
 <!-- TODO: Head -->
