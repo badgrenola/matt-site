@@ -1,5 +1,5 @@
 <script>
-  import { SEOStore } from "./SEOStore";
+  import { SEOStore } from "$lib/SEOStore";
 </script>
 
 <svelte:head>
