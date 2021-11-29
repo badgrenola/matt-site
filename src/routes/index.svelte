@@ -7,11 +7,7 @@
 
 <script>
   import { onMount } from 'svelte'
-  import { SEOStore } from "$lib/SEOStore";
   import PageLayout from '$lib/PageLayout.svelte'
-
-  //Set the index metadata
-  SEOStore.setToIndex()
 
   //Setup the data types for the rotating text + store the current index
   let dataTypes = ["VFX", "design", "space"]
@@ -138,6 +134,26 @@
   })
 
 </script>
+
+<svelte:head>
+  <title>Matt Brealey</title>
+  <meta name="description" content="The portfolio site of a freelance creative problem solver." />
+  <meta name="keywords" content="space, react, reactjs, threejs, sapper, svelte, sveltejs, ios, swift, 3d, ar, vfx, design"/>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mattbrealey.com">
+  <meta property="og:title" content="Matt Brealey">
+  <meta property="og:description" content="The portfolio site of a freelance creative problem solver.">
+  <meta property="og:image" content="https://mattbrealey.com/profile.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://mattbrealey.com">
+  <meta property="twitter:title" content="Matt Brealey">
+  <meta property="twitter:description" content="The portfolio site of a freelance creative problem solver.">
+  <meta property="twitter:image" content="https://mattbrealey.com/profile.jpg">
+</svelte:head>
 
 <PageLayout>
   <span slot="title">
