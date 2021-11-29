@@ -6,10 +6,7 @@ module.exports = {
   remarkPlugins: [
     [
       require("remark-github"),
-      {
-        // Use your own repository
-        repository: "https://github.com/svelte-add/mdsvex.git",
-      },
+      { repository: "https://github.com/svelte-add/mdsvex.git" },
     ],
     require("remark-abbr"),
   ],

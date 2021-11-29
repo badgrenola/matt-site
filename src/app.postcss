@@ -11,6 +11,11 @@ html, body {
   height: 100%;
 }
 
+/* Text selection */
+::selection {
+  @apply bg-pink-600 text-white;
+}
+
 /* Extract link styles */
 a {
   cursor: pointer;
@@ -70,11 +75,15 @@ a:hover {
 }
 
 .markdown h2 {
-  @apply mt-6 text-xl text-pink-600 font-light;
+  @apply mt-6 text-2xl text-pink-600 font-light;
+}
+
+.markdown h2:nth-child(n+3) {
+  @apply mt-12;
 }
 
 .markdown h3 {
-  @apply mt-6 text-base font-light text-gray-600;
+  @apply mt-8 text-base font-light text-gray-600;
 }
 
 .markdown h4 {

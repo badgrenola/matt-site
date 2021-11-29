@@ -19,7 +19,6 @@
 </script>
 
 <script>
-  import Seo from "$lib/Seo.svelte"
   import Header from "$lib/Header.svelte"
   import Footer from "$lib/Footer.svelte"
   import SideBar from "$lib/SideBar.svelte"
@@ -29,7 +28,6 @@
   export let projects = []
 </script>
 
-<Seo />
 <div class="container mx-auto flex flex-col min-h-full max-w-5xl">
 	<Header />
 	<main class="flex-grow pb-6">

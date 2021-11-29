@@ -4,6 +4,6 @@
   and
   <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer" class="colorLink">TailwindCSS</a>
   , and it's code is entirely
-  <a href="https://github.com/badgrenola/sapper-tailwind-blog" target="_blank" rel="noopener noreferrer" class="colorLink">open source</a>
+  <a href="https://github.com/badgrenola/mattbrealeydotcom" target="_blank" rel="noopener noreferrer" class="colorLink">open source</a>
   👍</p>
 </footer> 
