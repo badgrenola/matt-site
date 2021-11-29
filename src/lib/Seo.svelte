@@ -1,5 +1,5 @@
 <script>
-  import store from "$lib/store";
+  import store from "./store";
 </script>
 
 <svelte:head>
