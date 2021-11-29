@@ -1,5 +1,5 @@
 <script>
-  import store from '$lib/store'
+  import { store } from './store'
   export let id
   export let desc
   export let keywords
