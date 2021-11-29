@@ -1,5 +1,5 @@
 <script>
-  import { store } from './store'
+  import { SEOStore } from './SEOStore'
   export let id
   export let desc
   export let keywords
@@ -9,7 +9,7 @@
   export let tags
   export let title
   
-  store.setToProject({id, desc, keywords, largeImage, slug, smallImage, tags, title})
+  SEOStore.setToProject({id, desc, keywords, largeImage, slug, smallImage, tags, title})
 </script>
 
 <div class="w-full">
