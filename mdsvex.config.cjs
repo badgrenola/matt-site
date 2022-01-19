@@ -12,6 +12,7 @@ module.exports = {
   ],
   rehypePlugins: [
     require("rehype-slug"),
+    require("rehype-figure"),
     [
       require("rehype-autolink-headings"),
       {

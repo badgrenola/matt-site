@@ -57,7 +57,7 @@ IFD fields are always 12 bytes long, so let's grab the next 12 bytes and start p
 
 The first 2 bytes give us the ID of the tiff tag. Converting `0100` to a short (AKA a 16-bit unsigned int) gives us a value of 256. One search of [AwareSystems Tiff Tag Reference](https://www.awaresystems.be/imaging/tiff/tifftags/search.html?q=256&Submit=Find+Tags) later and :
 
-![ImageWidth tag details](/images/articles/reading-tiff-tags/imageWidthTag.png)
+![The details section for the ImageWidth tag, as found on AwareSystems Tiff Tag Reference.](/images/articles/reading-tiff-tags/imageWidthTag.png)
 
 We've found an _ImageWidth_ tag! Let's move on and try to get the width itself.
 

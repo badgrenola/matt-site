@@ -54,7 +54,7 @@ a:hover {
   @apply text-pink-600;
 }
 
-.markdown > * + * {
+.markdown > * {
   @apply mt-0 mb-4;
 }
 
@@ -133,6 +133,14 @@ a:hover {
 
 .markdown td {
   @apply border py-1 px-3;
+}
+
+.markdown figure {
+  @apply py-6 text-center;
+}
+
+.markdown figure > figcaption { 
+  @apply text-xs pt-2;
 }
 
 @tailwind utilities;
