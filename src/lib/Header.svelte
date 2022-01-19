@@ -13,21 +13,21 @@
   let isArticles;
   $: {
       //Dynamically update the vars to match the current route
-      isIndex = $page.path === "/"
-      isProjects = $page.path === "/projects"
-      isArticles = $page.path === "/articles"
+      isIndex = $page.url.pathname === "/"
+      isProjects = $page.url.pathname === "/projects"
+      isArticles = $page.url.pathname === "/articles"
   }
 
   //Store the mobile menu open state
   var isOpen = false;
 
   //Close the menu on route change
-  let oldRoute = $page.path
+  let oldRoute = $page.url.pathname
   $: {
       //If the route has changed
-      if (oldRoute !== $page.path) { 
+      if (oldRoute !== $page.url.pathname) { 
           //Store the new route, and close the menu
-          oldRoute = $page.path
+          oldRoute = $page.url.pathname
           isOpen = false
       }
   }
