@@ -45,7 +45,7 @@
 	<div slot="content" class="">
 		{#if articles}
 			<div class="flex flex-wrap -mx-2 overflow-hidden sm:-mx-4">
-				{#each articles as article}
+				{#each articles as article, articleIndex}
 					<Card
 						date={article.metadata.date}
 						desc={article.metadata.desc}
@@ -54,6 +54,10 @@
 						title={article.metadata.title}
 						timeToRead={article.metadata.timeToRead}
 					/>
+
+          {#if articleIndex !== articles.length - 1}
+            <hr class="w-full mt-6 mb-9 mx-4 md:hidden" />
+          {/if}
 				{/each}
 			</div>
 		{/if}

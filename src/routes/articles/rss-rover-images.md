@@ -22,7 +22,7 @@ Luckily for me and anyone reading this, NASA provides separate RSS feeds for the
 
 However, one thing that I hadn't seen available on the web, was a solution to the problem of how to actually view the image data in a more human-friendly way. 
 
-For instance, images captured at the same location on the same day by the same instrument pointed in the same direction, one directly after the other, were still being displayed as multiple individual frames that would need to be individually viewed and downloaded, rather than as a single, easily playable video.
+For instance, images captured at the same location on the same day by the same instrument pointed in the same direction, one directly after the other, were still being displayed as multiple individual frames that would need to be individually viewed and downloaded, rather than as a single, easily playable animation.
 
 ![21 individual frames from Perseverance's Left Navcam, as shown on NASA's fantastic Raw Images site. Taken on Sol 148, there is a gap of ~14s between each frame, with the whole sequence covering ~4.5mins.](/images/articles/rss-rover-images/sequenceFrames.png)
 
@@ -30,10 +30,10 @@ So I decided that before attempting to display the image data in 3D, I would set
 
 Several months of lunchtimes and evenings later (and with a codebase now ~3x larger than before) I finally have something working vaguely well enough that I'm semi-comfortable releasing it as a rough alpha in the next few days.
 
-In the rest of this post, I'll quickly cover roughly how it all works, and then I'll dive deeper into the Image View types and currently missing/possible future features over the next few weeks.
+In the rest of this post, I'll quickly cover roughly how it all works, and then I'll dive deeper into the ImageView types and currently missing/possible future features over the next few weeks.
 
 ## A Short Argument for Sharing All of your Metadata
-Before I delve into the details, I have to say up front that the choice to share such a large and relatively complete set of metadata to the general public, in such an easily digestable format, alongside every single available rover image, is nothing short of phenomenal. And whilst the Curiosity feed has been extremely helpful during my work, the obvious extra effort that has gone into standardising and improving upon that format for the Perseverance and Ingenuity missions should be massively applauded. 
+Before I delve into the details, I have to say up front that the choice to share such a large and relatively complete set of metadata to the general public, in such an easily digestable format, alongside every single available rover image, is nothing short of phenomenal. And whilst the Curiosity feed has been extremely helpful during my work, the obvious extra effort that has gone into further standardising and generally improving upon the metadata structure for the Perseverance and Ingenuity missions should be massively applauded. 
 
 All of the work I've done in ingesting, parsing and displaying the data from these missions, is based *solely* on the available RSS feeds - there are (currently) no additional external datasources whatsoever. 
 
@@ -67,8 +67,10 @@ There is of course a *lot* more to this, but I'll cover the details of each view
 
 ## Wrong Groups? New Groups?!
 
-Now, knowing exactly when the subgrouping described above should (and more importantly should *not*) happen has been an understandably tricky part of the process, and is something that I'm hoping *you* might be able to help me with improving!
+Now, knowing exactly when the grouping described above should (and more importantly should *not*) happen has been an understandably tricky part of the process, and is something that I'm hoping *you* might be able to help me with improving!
 
-If you notice images that are incorrectly being classified, or find certain images that you think would be useful to combine together into a specific existing (or even brand new) view type, please do get in touch and let me know! This is all *far* from finished, and the next step is to improve upon the initial groupings as much as possible.
+If you notice images that are incorrectly being classified, or find certain images that you think would be useful to combine together into a specific existing (or even brand new) view type, please do [get in touch](mailto:hello@mattbrealey.com) and let me know! This is all *far* from finished, and the next step is to improve upon the initial groupings as much as possible.
 
-In the meantime, I want to **massively** thank the people who tested various incarnations of this work for me - your feedback has been invaluable both in correcting some of the technical details, and in giving me the motivation to keep going. So thank you!
+I want to **massively** thank the people who tested various incarnations of this work for me - your feedback has been invaluable both in correcting some of the technical details, and in giving me the motivation to keep going. So thank you!
+
+Now to finish the splash page and get this thing released 👍
