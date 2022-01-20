@@ -21,14 +21,14 @@
   <meta property="og:url" content={`https://mattbrealey.com/articles/${slug}`}>
   <meta property="og:title" content={`${title} // Matt Brealey`}>
   <meta property="og:description" content={desc}>
-  <meta property="og:image" content={smallImage}>
+  <meta property="og:image" content={`https://mattbrealey.com${smallImage}`}>
 
   <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content={`https://mattbrealey.com/articles/${slug}`}>
-  <meta property="twitter:title" content={`${title} // Matt Brealey`}>
-  <meta property="twitter:description" content={desc}>
-  <meta property="twitter:image" content={smallImage}>
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content={`https://mattbrealey.com/articles/${slug}`}>
+  <meta name="twitter:title" content={`${title} // Matt Brealey`}>
+  <meta name="twitter:description" content={desc}>
+  <meta name="twitter:image" content={`https://mattbrealey.com${smallImage}`}>
 </svelte:head>
 
 <div class="w-full">

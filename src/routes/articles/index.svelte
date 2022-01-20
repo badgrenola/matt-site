@@ -33,11 +33,11 @@
   <meta property="og:image" content="https://mattbrealey.com/profile.jpg">
 
   <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://mattbrealey.com">
-  <meta property="twitter:title" content="Matt Brealey">
-  <meta property="twitter:description" content="The portfolio site of a freelance creative problem solver.">
-  <meta property="twitter:image" content="https://mattbrealey.com/profile.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://mattbrealey.com">
+  <meta name="twitter:title" content="Matt Brealey">
+  <meta name="twitter:description" content="The portfolio site of a freelance creative problem solver.">
+  <meta name="twitter:image" content="https://mattbrealey.com/profile.jpg">
 </svelte:head>
 
 <PageLayout>
