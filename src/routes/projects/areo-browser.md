@@ -5,7 +5,7 @@ title: "Areo Browser"
 smallImage: /images/areo-browser/splash_small.jpeg
 largeImage : /images/areo-browser/splash_small.jpeg
 desc: A web-app allowing you to explore nearly 2000 3D models of Mars, using data from HiRISE & HRSC.
-keywords: areo, areo-browser, areo browser, areobrowser, space, hirise, hrsc, browser, react, reactjs, mobile, desktop, dtm, gis, terrain, digital terrain model, mars, planet, planetary data, data
+keywords: areo, areo-browser, areo browser, areobrowser, space, hirise, hrsc, browser, svelte, mobile, desktop, dtm, gis, terrain, digital terrain model, mars, planet, planetary data, data
 tagName: areobrowser
 ---
 
@@ -74,7 +74,7 @@ tagName: areobrowser
 <ProjectLinks {links} />
 <h2 id="what-is-it" class="mt-6 text-xl text-pink-600 font-light">What is it?</h2>
 
-Areo Browser is a [React](https://reactjs.org/)/[ThreeJS](https://threejs.org/) web-app that allows you to explore nearly 2000 Martian terrain models, in full 3D, directly in your browser and on mobile. 
+Areo Browser is a [Svelte](https://svelte.dev/)/[ThreeJS](https://threejs.org/) web-app that allows you to explore over 2000 Martian terrain models, in full 3D, directly in your browser and on mobile. 
 It currently uses data from both the [HiRISE](https://www.uahirise.org/) camera (on-board NASA's [Mars Reconnaissance Orbiter](https://mars.nasa.gov/mro/)), and the [HRSC](https://www.esa.int/ESA_Multimedia//Images/2004/01/The_High_Resolution_Stereo_Camera_HRSC) (on-board ESA's [Mars Express](http://www.esa.int/Science_Exploration/Space_Science/Mars_Express)).
 
 With options for mesh and image resolution, vertical exaggeration, and displaying a custom [Cividis](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0199239) gradient with contour mapping on the model,
