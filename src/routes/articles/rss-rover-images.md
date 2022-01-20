@@ -3,8 +3,8 @@ id: 1
 slug: rss-rover-images
 title: RSS Rover Images
 date: "19th January 2022"
-smallImage: /images/articles/rss-rover-images/instruments.png
-largeImage: /images/articles/rss-rover-images/interface_big.png
+smallImage: /images/articles/rss-rover-images/imageGrid.png
+largeImage: /images/articles/rss-rover-images/imageGrid_big.png
 desc: The Why (and high-level How) of adding easily viewable rover images to Areo Browser.
 keywords: AreoBrowser, mars, rover, perseverance, curiosity, ingenuity, 3D
 timeToRead: 7
