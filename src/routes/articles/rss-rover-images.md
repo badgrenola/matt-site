@@ -53,8 +53,8 @@ There are currently 6 of these image types in [Areo Browser](/projects/areo-brow
 * **DebayeredImage** - The *Raw* and *Debayered* versions of a single image.
 * **Focus3DImage** - *Color* and *Depth* images (currently used only on MSL's MAHLI) that can be used to construct a 3D scene.
 * **StereoImage** - The *Left* and *Right* views from the same image capture.
-* **SequenceImage** - Multiple frames from the same instrument combined together.
-* **FilterStackImage** - A specialised **SequenceImage**, where each frame represents a different focus level from the same instrument for a single view.
+* **SequenceImage** - Multiple frames from the same instrument combined into a single animation.
+* **FilterStackImage** - A specialised **SequenceImage**, where each frame represents a different focus level from the same shot.
 * **MosaicImage** - A group of subframes that can be combined into a grid mosaic or panoramic image.
 
 This nested hierarchy approach allows me to create a complex view for any specific image type, whilst still having access to the data and functionality of images nested within.
@@ -63,13 +63,13 @@ For instance, the **MosaicImage** type can be constructed from **BaseImages**, *
 
 There is of course a *lot* more to this, but I'll cover the details of each view further in a future post.
 
-![All possible combinations of sub-images for a single MosaicImage, created using sub-frames from Perseverance's Navcam. The sub-images consist of the raw and debayered versions of the Left and Right Navcam instruments. Each of the 16 images that make up the mosaic have 4 possible viewing modes, combining a total of 64 individual images into one, single, easily viewable frame.](/images/articles/rss-rover-images/gridMosaicSubGroups.png)
+![All possible combinations of sub-images for a single MosaicImage, created using data from Perseverance's Navcam. These consist of the raw and debayered versions of the Left and Right Navcam images. Each of the 16 images that make up the mosaic have 4 possible viewing modes, combining a total of 64 individual images into one, single, easily viewable frame.](/images/articles/rss-rover-images/gridMosaicSubGroups.png)
 
 ## Wrong Groups? New Groups?!
 
 Now, knowing exactly when the grouping described above should (and more importantly should *not*) happen has been an understandably tricky part of the process, and is something that I'm hoping *you* might be able to help me with improving!
 
-If you notice images that are incorrectly being classified, or find certain images that you think would be useful to combine together into a specific existing (or even brand new) view type, please do [get in touch](mailto:hello@mattbrealey.com) and let me know! This is all *far* from finished, and the next step is to improve upon the initial groupings as much as possible.
+Once the site goes live, if you notice images that are incorrectly being classified, or find certain images that you think would be useful to combine together into a specific existing (or even brand new) view type, please do [get in touch](mailto:hello@mattbrealey.com) and let me know! This is all *far* from finished, and the next step is to improve upon the initial groupings as much as possible.
 
 I want to **massively** thank the people who tested various incarnations of this work for me - your feedback has been invaluable both in correcting some of the technical details, and in giving me the motivation to keep going. So thank you!
 
